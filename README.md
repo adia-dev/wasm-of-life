@@ -38,8 +38,8 @@ If you want to explore or tweak the project, here's a quick setup guide:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/adia-dev/wasm-of-life-wasm.git
-   cd wasm-of-life-wasm
+   git clone https://github.com/adia-dev/wasm-of-life.git
+   cd wasm-of-life
    ```
 
 2. **Build the Project** (requires `emcc` for WebAssembly):
