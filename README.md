@@ -1,5 +1,7 @@
 # 🌐 Conway's Game of Life in WebAssembly
-_(Insert demo video here)_
+
+https://github.com/user-attachments/assets/ab4440f1-f159-432c-9b3d-b60e9a2f266a
+
 
 Welcome to my WebAssembly-powered implementation of Conway's Game of Life! This project is all about learning, experimenting, and having fun with WebAssembly and JavaScript. 🛠️
 
