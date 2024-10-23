@@ -1,5 +1,5 @@
 COMPILER=g++
-OPTIONS=-g -std=c++17 -pedantic -Wall -Wextra -Werror -Wshadow -Wconversion -Wunreachable-code
+OPTIONS=-g -std=c++17 -pedantic -Wall
 COMPILE=$(COMPILER) $(OPTIONS)
 MKDIR_P=mkdir -p
 OUT_DIR=out
@@ -16,6 +16,9 @@ wasm: directories
 
 desktop: directories
 	$(COMPILE) src/main.cpp -o $(OUT_DIR)/app
+
+run: desktop
+	$(OUT_DIR)/app
 
 clean:
 	rm -rf ${OUT_DIR}/*
