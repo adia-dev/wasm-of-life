@@ -1,5 +1,7 @@
 # 🌐 Conway's Game of Life in WebAssembly
 
+# 🚀 Available here: https://wasm-of-life.fly.dev/
+
 https://github.com/user-attachments/assets/ab4440f1-f159-432c-9b3d-b60e9a2f266a
 
 
