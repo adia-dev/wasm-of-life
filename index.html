@@ -6,33 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Game of Life - WASM</title>
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </head>
 
 <body class="light-mode">
-    <div class="container">
+    <header>
         <div class="top-bar">
-            <button id="theme-toggle" class="btn">Switch to Dark Mode</button>
+            <div class="github-link">
+                <a href="https://github.com/adia-dev/wasm-of-life" target="_blank">
+                    <i class="fab fa-github"></i> adia-dev
+                </a>
+            </div>
+            <h1 class="app-title">Game of Life - WASM</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="btn">
+                    <i class="fas fa-moon"></i> Switch to Dark Mode
+                </button>
+            </div>
         </div>
+    </header>
+
+    <main class="container">
         <canvas id="world" width="400" height="400"></canvas>
         <div class="actions">
-            <button id="play-btn" class="btn">Play</button>
-            <button id="step-btn" class="btn">Step</button>
-            <button id="clear-btn" class="btn">Clear</button>
-            <label for="fps-slider">FPS:</label>
+            <button id="play-btn" class="btn">
+                <i class="fas fa-play"></i> Play
+            </button>
+            <button id="step-btn" class="btn">
+                <i class="fas fa-step-forward"></i> Step
+            </button>
+            <button id="clear-btn" class="btn">
+                <i class="fas fa-eraser"></i> Clear
+            </button>
+        </div>
+        <div class="speed">
+            <label for="fps-slider">Speed:</label>
             <input type="range" id="fps-slider" min="1" max="60" value="10" />
             <span id="fps-value">10</span>
         </div>
         <p id="generation-label">Generation</p>
         <div id="pattern-library">
             <div class="library-header">
-                <h3>Library</h3>
+                <h3><i class="fas fa-book"></i> Library</h3>
                 <input type="text" id="pattern-search" placeholder="Search patterns..." />
             </div>
             <hr />
             <div id="pattern-library--patterns"></div>
         </div>
-    </div>
+    </main>
+
     <script src="out/app.js"></script>
     <script src="js/gameOfLife.js"></script>
 </body>

@@ -47,7 +47,12 @@ createModule().then(async (Module) => {
     let fpsIntervalMs = 1000 / fps;
     let lastRenderTime = Number.MIN_VALUE;
     let isPlaying = true;
-    let isDarkMode = false;
+    let isDarkMode = localStorage.getItem("theme") === "dark" ?? false;
+
+    if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+        themeToggleBtn.innerText = "Switch to Light Mode";
+    }
 
     playBtn.innerText = isPlaying ? "Pause" : "Play";
 
@@ -73,6 +78,7 @@ createModule().then(async (Module) => {
 
     themeToggleBtn.addEventListener("click", () => {
         isDarkMode = !isDarkMode;
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
         document.body.classList.toggle("dark-mode");
         themeToggleBtn.innerText = isDarkMode
             ? "Switch to Light Mode"

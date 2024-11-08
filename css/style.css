@@ -1,7 +1,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 body.light-mode {
@@ -17,8 +19,10 @@ body.dark-mode {
 canvas {
     border: 2px solid black;
     margin: 1rem 0;
-    max-width: 100%; /* Make canvas responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    /* Make canvas responsive */
+    height: auto;
+    /* Maintain aspect ratio */
     transition: border-color 0.3s ease;
 }
 
@@ -35,11 +39,58 @@ body.dark-mode canvas {
     align-items: center;
 }
 
-.top-bar {
+header {
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode header {
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode header {
+    background-color: #2a2a3b;
+    color: #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.github-link {
+    font-size: 1.2rem;
+}
+
+.github-link a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.github-link a:hover {
+    color: #1e90ff;
+}
+
+.app-title {
+    font-size: 1.8rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.theme-toggle {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
-    margin-bottom: 1rem;
+}
+
+.theme-toggle .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
 }
 
 .actions {
@@ -47,7 +98,8 @@ body.dark-mode canvas {
     padding: 1rem;
     gap: 0.5rem;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
 }
 
 .btn {
@@ -58,7 +110,16 @@ body.dark-mode canvas {
     outline: none;
     background-color: #555;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn i {
+    font-size: 1.2rem;
 }
 
 .btn:hover {
@@ -78,7 +139,8 @@ body.dark-mode .btn {
 #fps-slider {
     margin-left: 1rem;
     cursor: pointer;
-    max-width: 150px; /* Limit slider width on smaller screens */
+    max-width: 150px;
+    /* Limit slider width on smaller screens */
 }
 
 #pattern-library {
@@ -95,12 +157,14 @@ body.dark-mode .btn {
     align-items: center;
     margin-bottom: 1rem;
     width: 100%;
+    font-size: 1.2rem;
 }
 
 #pattern-search {
     padding: 0.5rem;
     width: 100%;
-    max-width: 300px; /* Adjust width for smaller screens */
+    max-width: 300px;
+    /* Adjust width for smaller screens */
     border-radius: 4px;
     border: 1px solid #888;
     outline: none;
@@ -129,7 +193,9 @@ body.dark-mode #pattern-search {
     padding: 0.5rem;
     border-radius: 8px;
     background-color: #f0f0f0;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
     cursor: pointer;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -151,6 +217,14 @@ body.dark-mode .pattern-library--pattern:hover {
     background-color: #3a3a4b;
 }
 
+.top-bar {
+    margin: 0rem 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -158,17 +232,28 @@ body.dark-mode .pattern-library--pattern:hover {
     }
 
     .actions {
-        flex-direction: column; /* Stack controls vertically */
+        /* Stack controls vertically */
         align-items: center;
         gap: 1rem;
+    }
+
+    .speed {
+        display: flex;
+        align-items: center;
     }
 
     #fps-slider {
         width: 100%;
     }
 
+    .app-title {
+        font-size: 1rem;
+    }
+
     .top-bar {
+        flex-direction: column;
         justify-content: center;
+        padding: 1rem;
     }
 
     #pattern-library {
